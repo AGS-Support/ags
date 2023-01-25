@@ -6,7 +6,7 @@ module.exports = {
     title: `AGS Support`,
     description: `Supported housing`,
     author: `@gatsbyjs`,
-    siteUrl: process.env.WPGRAPHQL_URL,
+    siteUrl: "https://agssupport.co.uk",
   },
   plugins: [
     "gatsby-plugin-gatsby-cloud",
@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://agsheadless.tempurl.host/graphql`,
+        url: process.env.WPGRAPHQL_URL,
       },
     },
     {
