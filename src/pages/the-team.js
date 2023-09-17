@@ -11,7 +11,7 @@ import Button from "../components/atoms/Button"
 
 import PageHeading from "../components/molecules/PageHeading"
 
-const WhoWeArePage = ({ data }) => {
+const TheTeamPage = ({ data }) => {
   const teamMembers = data.allWpTeamMember.nodes
   return (
     <Layout>
@@ -26,7 +26,7 @@ const WhoWeArePage = ({ data }) => {
         <div className="container">
           <div className="content title text-center">
             <img
-              alt="banner image"
+              alt="the team"
               src={TeamPhoto}
               className="max-w-full mb-10 mt-4"
             />
@@ -102,7 +102,7 @@ const WhoWeArePage = ({ data }) => {
   )
 }
 
-export default WhoWeArePage
+export default TheTeamPage
 
 export const query = graphql`
   query WhoWeAreQuery {
