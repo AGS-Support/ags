@@ -2,9 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
+import TeamPhoto from "../assets/images/AGS-Team-copy.avif"
 
 import Layout from "../components/Layout"
-import Seo from "../components/SEO"
 import Section from "../components/Section"
 
 import Button from "../components/atoms/Button"
@@ -12,25 +12,23 @@ import Button from "../components/atoms/Button"
 import PageHeading from "../components/molecules/PageHeading"
 
 const WhoWeArePage = ({ data }) => {
-  const content = data.wpPage.whoWeAre
   const teamMembers = data.allWpTeamMember.nodes
-  const bannnerImage = getImage(content.image?.localFile)
-  const seo = data.wpPage.seo
   return (
     <Layout>
-      <Seo seo={seo} />
       <PageHeading
-        title={content.headline}
-        intro={content.intro}
+        title={"The Team Behind AGS "}
+        intro={
+          "At the heart of AGS Support, allowing us to support our clients with the best services for their needs, is a seasoned managerial team—a sum of rich experience, diverse skills, and matching competencies across the supported housing and care sectors."
+        }
         className="text-center mb-0"
       />
       <section className="mt-0 pt-0">
         <div className="container">
           <div className="content title text-center">
-            <GatsbyImage
-              image={bannnerImage}
-              className="max-w-full mb-10"
+            <img
               alt="banner image"
+              src={TeamPhoto}
+              className="max-w-full mb-10 mt-4"
             />
           </div>
         </div>
@@ -108,36 +106,6 @@ export default WhoWeArePage
 
 export const query = graphql`
   query WhoWeAreQuery {
-    wpPage(tags: { nodes: { elemMatch: { slug: { eq: "who-we-are" } } } }) {
-      seo {
-        metaDesc
-        metaKeywords
-        title
-        twitterDescription
-        opengraphType
-        opengraphTitle
-        opengraphImage {
-          altText
-          sourceUrl
-          srcSet
-        }
-        twitterImage {
-          sourceUrl
-        }
-      }
-      whoWeAre {
-        headline
-        intro
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-            }
-          }
-        }
-      }
-    }
-
     allWpTeamMember(sort: { fields: menuOrder, order: ASC }) {
       nodes {
         theTeam {

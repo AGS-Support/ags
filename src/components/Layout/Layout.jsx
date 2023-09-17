@@ -38,12 +38,11 @@ const Layout = ({ children }) => {
         buttonText="Accept"
         declineButtonText="Decline"
         cookieName="gatsby-gdpr-google-tagmanager"
-        buttonClasses="font-bold rounded rounded-lg border-2"
+        buttonClasses="font-bold rounded-lg border-2"
         buttonStyle={{
           borderRadius: "5px",
           backgroundColor: "#479394",
           color: "#fff",
-          padding: "10px",
         }}
       >
         This site uses cookies ...

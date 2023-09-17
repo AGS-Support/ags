@@ -27,26 +27,19 @@ const Quicklinks = ({ headline, links }) => {
                 )
               })}
             </ul>
-            <div className="mb-5 mt-10 block md:mb-0 md:mt-0 quickLinks:flex quickLinks:justify-between pt-0 md:pt-10 quickLinks:pt-0">
-              <div className="order-3">
-                <a
-                  href={`${process.env.GATSBY_CALENDLY_URL}`}
-                  className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-brand border-white text-white block quickLinks:inline quickLinks:w-auto p-4"
-                >
-                  Book a free call
-                </a>
-              </div>
-              <div className="order-2 hidden md:flex">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </div>
-              <div className="order-1">
-                <Link
-                  to="contact-us"
-                  className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-secondary border-secondary text-white block quickLinks:inline quickLinks:w-auto p-4"
-                >
-                  Call us now
-                </Link>
-              </div>
+            <div className="mb-5 mt-10 flex flex-col md:my-0 md:flex-row gap-2">
+              <a
+                href={`${process.env.GATSBY_CALENDLY_URL}`}
+                className="font-bold rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-brand border-white text-white block quickLinks:inline quickLinks:w-auto p-4"
+              >
+                Book a free call
+              </a>
+              <Link
+                to="contact-us"
+                className="font-bold rounded-lg border-2   text-center w-full   mb-5 md:mb-0 bg-secondary border-secondary text-white block quickLinks:inline quickLinks:w-auto p-4"
+              >
+                Call us now
+              </Link>
             </div>
           </div>
         </div>
