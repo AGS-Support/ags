@@ -184,11 +184,8 @@ const Footer = () => {
               {footerData.companyInfo.companyNumber}
               <br /> Registered Address:{" "}
               {footerData.companyInfo.registeredAddress}
-              <br /> © 2022 {footerData.companyInfo.companyName}.
-              <div className="mt-2">
-                Built with 💖 by{" "}
-                <a href="https://indieridge.com">Indie Ridge</a>
-              </div>
+              <br /> © {new Date().getFullYear()}{" "}
+              {footerData.companyInfo.companyName}.
               <div className="mt-3">
                 {menu.map((item, index) => {
                   return (
